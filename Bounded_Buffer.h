@@ -4,17 +4,19 @@
 #ifndef Bounded_Buffer_h
 #define Bounded_Buffer_h
 
-class Bounded_Buffer
-{
+#include "Unbounded_Buffer.h"
+
+class Bounded_Buffer : public Unbounded_Buffer {
 private:
-    int size;
+    int max_size;
+    sem_t not_full; // Binary semaphore to indicate if the buffer is not full
 
 public:
     Bounded_Buffer(int size);
     ~Bounded_Buffer();
     
-    void insert(void* s);
-    char* remove();
+    void insert(std::string s) override;
+    std::string remove() override;
 };
 
 #endif // Bounded_Buffer_h

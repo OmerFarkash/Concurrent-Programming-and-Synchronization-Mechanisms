@@ -1,0 +1,16 @@
+PRODUCER 1
+[number of products]
+queue size = [size]
+
+PRODUCER 2
+[number of products]
+queue size = [size]
+
+...
+...
+
+PRODUCER n
+[number of products]
+queue size = [size]
+
+Co-Editor queue size = [size]

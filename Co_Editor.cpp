@@ -3,7 +3,7 @@
 
 #include "Co_Editor.h"
 
-Co_Editor::Co_Editor(Unbounded_Buffer * shared, Bounded_Buffer * type) {
+Co_Editor::Co_Editor(Bounded_Buffer * shared, Unbounded_Buffer * type) {
    this->shared_queue = shared;
    this->type = type;
 }

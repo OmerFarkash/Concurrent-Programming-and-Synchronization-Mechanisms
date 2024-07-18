@@ -3,6 +3,7 @@
 
 #include "Bounded_Buffer.h"
 #include <stdexcept>
+#include <iostream>
 
 Bounded_Buffer::Bounded_Buffer(int max_size) : Unbounded_Buffer(), max_size(max_size) {
     if (sem_init(&not_full, 0, max_size) != 0) { // Initially, the buffer has space for max_size elements
@@ -24,6 +25,6 @@ void Bounded_Buffer::insert(std::string s) {
 std::string Bounded_Buffer::remove() {
     std::string s = Unbounded_Buffer::remove(); // Remove the item
     // If an item was removed, signal that the buffer has space
-    sem_wait(&not_full);
+    sem_post(&not_full);
     return s;
 }

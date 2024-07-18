@@ -13,10 +13,10 @@
 class Co_Editor
 {
 private:
-   Unbounded_Buffer * shared_queue;
-   Bounded_Buffer * type;
+   Bounded_Buffer * shared_queue;
+   Unbounded_Buffer * type;
 public:
-   Co_Editor(Unbounded_Buffer * shared, Bounded_Buffer * type);
+   Co_Editor(Bounded_Buffer * shared, Unbounded_Buffer * type);
    ~Co_Editor();
    void edit();
 };

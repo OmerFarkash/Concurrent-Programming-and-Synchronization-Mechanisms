@@ -1,16 +1,21 @@
 PRODUCER 1
-[number of products]
-queue size = [size]
+30
+queue size = 5
 
 PRODUCER 2
-[number of products]
-queue size = [size]
+25
+queue size = 3
 
-...
-...
+PRODUCER 3
+16
+queue size = 30
 
-PRODUCER n
-[number of products]
-queue size = [size]
+PRODUCER 4
+12
+queue size = 2
 
-Co-Editor queue size = [size]
+PRODUCER 5
+18
+queue size = 7
+
+Co-Editor queue size = 13

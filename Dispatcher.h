@@ -14,11 +14,9 @@ class Dispatcher
 private:
    int done_counter;
    std::list<Bounded_Buffer*> * producers_queues;
-   std::array<Bounded_Buffer*, 3> Dispatcher_queues; // Remove the asterisk (*) before Dispatcher_queues
+   std::array<Unbounded_Buffer*, 3> Dispatcher_queues; // Remove the asterisk (*) before Dispatcher_queues
 public:
-   Dispatcher(int num_of_producers, std::list<Bounded_Buffer*> * producers_queues, std::array<Bounded_Buffer*, 3> Dispatcher_queues);
-   ~Dispatcher();
-
+   Dispatcher(int num_of_producers, std::list<Bounded_Buffer*> * producers_queues, std::array<Unbounded_Buffer*, 3> Dispatcher_queues);
    void handle_products();
 };
 

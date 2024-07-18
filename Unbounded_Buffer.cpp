@@ -7,10 +7,10 @@
 Unbounded_Buffer::Unbounded_Buffer() {
     buffer = std::queue<std::string>();
     if (sem_init(&mutex, 0, 1) != 0) {
-        throw std::runtime_error("Failed to initialize semaphore");
+        throw std::runtime_error("Failed to initialize mutex semaphore");
     }
     if (sem_init(&is_empty, 0, 0) != 0) { // Initially empty
-        throw std::runtime_error("Failed to initialize semaphore");
+        throw std::runtime_error("Failed to initialize is_empty semaphore");
     }
 }
 

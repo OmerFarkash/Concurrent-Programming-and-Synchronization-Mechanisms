@@ -17,11 +17,9 @@ void Screen_Manager::display() {
       product = shared_queue->remove();
       if (product.find("DONE") != std::string::npos) {
          done--;
-      }
-      else if (product.find("") != std::string::npos) {
+      } else if (!product.empty()) {
          std::cout << product << std::endl;
       }
    }
    std::cout << "DONE" << std::endl;
-   return;
 }
